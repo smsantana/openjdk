@@ -37,7 +37,8 @@ ENV JAVA_ALPINE_VERSION 8.171.11-r0
 RUN set -x \
 	&& apk add --no-cache \
 		openjdk8="$JAVA_ALPINE_VERSION" \
-	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
+	&& [ "$JAVA_HOME" = "$(docker-java-home)" ] \
+	&& apk add --no-cache curl -y
 
 # If you're reading this and have any feedback on how this image could be
 # improved, please open an issue or a pull request so we can discuss it!
